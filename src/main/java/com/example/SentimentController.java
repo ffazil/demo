@@ -1,9 +1,15 @@
 package com.example;
 
 import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.ling.CoreLabel;
+import edu.stanford.nlp.neural.rnn.RNNCoreAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.semgraph.SemanticGraph;
+import edu.stanford.nlp.semgraph.SemanticGraphCoreAnnotations;
 import edu.stanford.nlp.sentiment.SentimentCoreAnnotations;
+import edu.stanford.nlp.trees.Tree;
+import edu.stanford.nlp.trees.TreeCoreAnnotations;
 import edu.stanford.nlp.util.CoreMap;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,11 +39,20 @@ public class SentimentController {
         List<CoreMap> sentences = document.get(CoreAnnotations.SentencesAnnotation.class);
 
         String s = null;
-        if (sentences != null && ! sentences.isEmpty()) {
-            CoreMap sentence = sentences.get(0);
+        for(CoreMap sentence: sentences) {
             s = sentence.get(SentimentCoreAnnotations.SentimentClass.class);
+            SemanticGraph dependencies = sentence.get(SemanticGraphCoreAnnotations.CollapsedCCProcessedDependenciesAnnotation.class);
             log.info("Sentiment = {}", s);
+            for (CoreLabel token: sentence.get(CoreAnnotations.TokensAnnotation.class)) {
+                // this is the text of the token
+                String word = token.get(CoreAnnotations.TextAnnotation.class);
+                // this is the POS tag of the token
+                String pos = token.get(CoreAnnotations.PartOfSpeechAnnotation.class);
+                // this is the NER label of the token
+                String ne = token.get(CoreAnnotations.NamedEntityTagAnnotation.class);
             }
+        }
+
         return ResponseEntity.ok(s);
     }
 }
