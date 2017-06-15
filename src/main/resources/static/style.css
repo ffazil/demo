@@ -1,0 +1,419 @@
+/******************** Defaults ********************/
+body, div, table, tr, td, p
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+table
+{
+    border-collapse: collapse;
+}
+
+/******************** Embedded Fonts ********************/
+@font-face
+{
+    font-family: NeutraLight;
+    src: url( "fonts/NeutraText-Light.otf" );
+}
+@font-face
+{
+    font-family: NeutraLightItalic;
+    src: url( "fonts/NeutraText-LightItalic.otf" );
+}
+@font-face
+{
+    font-family: NeutraDemi;
+    src: url( "fonts/NeutraText-Demi.otf" );
+}
+@font-face
+{
+    font-family: NeutraBold;
+    src: url( "fonts/NeutraText-Bold.otf" );
+}
+
+/******************** Page styles ********************/
+body
+{
+    background: #fff;
+}
+div#OuterCanvas
+{
+    width: 100%;
+    cursor: default;
+}
+div#InnerCanvas
+{
+    margin: 0 25px;
+    text-align: center;
+}
+div#Page
+{
+    display: inline-block;
+    text-align: left;
+    min-height: 400px;
+
+    margin: 30px auto 50px auto;
+    border: 1px solid #ccc;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 80px;
+    box-shadow: 0 0 24px #bbb;
+    background: #eee;
+
+    color: #666;
+    font-family: NeutraLight, Gill Sans, Sans Serif;
+    font-size: 10pt;
+}
+div#Page i
+{
+    font-family: NeutraLightItalic;
+    font-style: normal;
+}
+div#Page b
+{
+    font-family: NeutraBold;
+    font-weight: normal;
+}
+
+/******************** Header Section ********************/
+div.header
+{
+    padding: 25px 15px 20px 25px;
+    border-bottom: 1px solid #ddd;
+    border-top-right-radius: 50px;
+    background: #fff;
+
+    color: #666;
+    font-family: NeutraLight;
+    font-size: 10pt;
+}
+div.header span.title
+{
+    display: inline-block;
+    padding: 0 15px 0 10px;
+
+    color: #333;
+    font-family: Georgia, Times New Roman, Serif;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+div.header span.subtitle
+{
+    display: inline-block;
+    padding: 0 10px;
+}
+div.header span.selected
+{
+    font-family: NeutraBold;
+    color: #333;
+}
+div.header span.disabled
+{
+    color: #bbb;
+}
+div.header a
+{
+    color: #666;
+    text-decoration: none;
+}
+div.header a:hover
+{
+    color: #933;
+    text-decoration: underline;
+}
+
+/******************** Information ********************/
+div.content
+{
+    padding: 20px 50px 20px 50px;
+}
+
+div.content p
+{
+    margin: 0 50px 1em 20px;
+}
+div.content a
+{
+    color: #933;
+    font-family: NeutraLight;
+    text-decoration: none;
+}
+div.content a:hover
+{
+    text-decoration: underline;
+}
+div.content p.intro
+{
+    color: #333;
+    font-size: 12pt;
+    word-spacing: 1px;
+    line-height: 1.2em;
+    padding-left: 20px;
+    padding-right: 40px;
+}
+div.content p.footnote
+{
+    font-size: 8pt;
+    color: #666;
+}
+div.content sup.footnote
+{
+    font-size: 9pt;
+    color: #999;
+    height: 0;
+    line-height: 0;
+    position: relative;
+}
+div.content p.disabled
+{
+    color: #bbb;
+}
+
+div.content p.reference
+{
+    width: 240px;
+    margin: 0 0 1em 25px;
+}
+div.content p.reference span.name
+{
+    white-space: nowrap;
+}
+div.content p.reference img
+{
+    border: 1px solid #eee;
+}
+/******************** Footer Section ********************/
+div.footer
+{
+    height: 40px;
+    padding: 20px 30px 20px 120px;
+    border-top: 1px solid #ccc;
+    text-align: right;
+    vertical-align: bottom;
+    color: #999;
+}
+div.footer span
+{
+    display: inline-block;
+}
+div.footer .info
+{
+    display: none;
+}
+div.footer a
+{
+    color: #999;
+    text-decoration: none;
+}
+div.footer a:hover
+{
+    color: #933;
+    text-decoration: underline;
+}
+
+/******************** Visualization-Specific Section ********************/
+
+div.ControlInfo
+{
+    padding: 10px 0;
+}
+div.ControlPanel
+{
+    padding: 10px 0;
+}
+
+div.SimpleSentree
+{
+    display: inline-block;
+    width: 200px;
+    height: 212px;
+    margin: 10px 0 0 10px;
+    vertical-align: top;
+    cursor: pointer;
+}
+div.SimpleSentree div.header
+{
+    width: 170px;
+    height: 12px;
+    background: #bbb;
+    border: 1px solid #bbb;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    color: #fff;
+    padding: 0 15px;
+    text-align: center;
+    vertical-align: bottom;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 10px;
+}
+div.SimpleSentree div.body
+{
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border: 1px solid #bbb;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+div.FullSentree
+{
+    display: inline-block;
+    margin: 10px 0 0 10px;
+    vertical-align: top;
+    border-radius: 16px;
+    box-shadow: 0 0 50px #000;
+    cursor: pointer;
+}
+div.FullSentree div.header
+{
+    height: 14px;
+    background: #999;
+    border: 1px solid #999;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    color: #eee;
+    padding: 5px 15px;
+    text-align: center;
+    vertical-align: bottom;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 12px;
+}
+div.FullSentree div.body
+{
+    background: #fff;
+    border: 1px solid #999;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+/******************** Active Learning ********************/
+div.content p.description
+{
+    color: #333;
+    font-size: 11pt;
+    word-spacing: 1px;
+    line-height: 1.2em;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+div.content p.querybox
+{
+    color: #333;
+    font-size: 13pt;
+    word-spacing: 1px;
+    line-height: 1.2em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+div.content h3 {
+    display: inline-block;
+    padding: 0 10px 0 10px;
+    color: #333;
+    font-family: Georgia, Times New Roman, Serif;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+div.content p.inlinetitle {
+    display: inline;
+    padding: 0 20px 0 20px;
+    color: #333;
+    font-family: Georgia, Times New Roman, Serif;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+div.content p.inlinebody
+{
+    display: inline-block;
+    color: #333;
+    font-size: 11pt;
+    word-spacing: 1px;
+    line-height: 1.2em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+div.trees {
+    padding: 10px 10px 10px 10px; }
+div.tree {
+    display: inline-block;
+    border: 1px solid #aaa;
+    background: #fff;
+    padding: 10px;
+    margin: 0px; }
+div.tooltip {
+    position: absolute;
+    text-align: left;
+    width: 186px; /*( ((this.value.length + 1) * 12) + 12 ) + 'px'; /* make sure you update multiplier according to font size */
+    height: auto;
+    padding: 15px;
+    font: 12px sans-serif;
+    background: seashell;
+    border-radius: 8px;
+    pointer-events: none;
+    -webkit-box-shadow: rgba(0,0,0,0.45) 0 5px 20px;
+    -moz-box-shadow: rgba(0,0,0,0.45) 0 5px 20px;
+    box-shadow: rgba(0,0,0,0.45) 0 5px 20px;
+    /* 	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 10px rgba(0, 0, 0, 0.5);
+           -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 10px rgba(0, 0, 0, 0.5);
+                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 10px rgba(0, 0, 0, 0.5); */
+    /* 	-webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+           -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+                box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125); */
+}
+div.scoring {
+    text-align: left;
+    height: auto;
+    font-family: Verdana;
+    font-size: 11pt;
+    background-color: transparent;
+    background-image: none;
+    margin-left:  0px;
+    margin-right: 0px;
+    margin-top:   0px;
+    color: #333; }
+.spacingFree { padding: 0px; margin: 0px; }
+.scoreOne   { color: #B2182B; }
+.scoreTwo   { color: #F4A582; }
+.scoreThree { color: #999999; }
+.scoreFour  { color: #92C5DE; }
+.scoreFive  { color: #2166AC; }
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px; }
+
+.btn {
+    display: inline-block;
+    *display: inline;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    margin-right: .3em;
+    *margin-left: .3em;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    *border: 0;
+    border-color: #eee #eee #ccc;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-bottom-color: #999; }
+.btn:hover {
+    text-decoration:none; }
+.btn:active {
+    text-decoration:none; }
+.btn.btn-next {
+    background-color: #3498db; }
+.btn.btn-next:hover,
+.btn.btn-next:focus,
+.btn-group:focus .btn.btn-next.dropdown-toggle {
+    background-color: #5dade2; }
+.btn.btn-next:active,
+.btn-group.open .btn.btn-next.dropdown-toggle,
+.btn.btn-next.active {
+    background-color: #2c81ba; }
+.btn.btn-thanks {
+    background-color: #cccccc; }

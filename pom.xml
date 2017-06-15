@@ -51,6 +51,22 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!--Webjars-->
+		<dependency>
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>d3</artifactId>
+			<version>4.9.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>c3</artifactId>
+			<version>0.4.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.2.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
